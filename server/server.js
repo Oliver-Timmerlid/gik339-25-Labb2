@@ -2,7 +2,7 @@ const express = require('express');
 
 const server = express();
 
-const sqlite3 = require('sqlite3').verbose()
+const sqlite3 = require('sqlite3').verbose();
 
 server
 	.use(express.json())
@@ -17,20 +17,20 @@ server
 
 const port = 3000;
 server.listen(port, () => {
-    console.log(`Server på port ${port}`);
+	console.log(`Server på port ${port}`);
 });
 
-server.get('/users', (req, res) =>{
-  const db = new sqlite3.Database('./gik339-labb2.db');
+server.get('/users', (req, res) => {
+	const db = new sqlite3.Database('./gik339-labb2.db');
 
-  const sql = 'SELECT * FROM users';
+	const sql = 'SELECT * FROM users';
 
-  db.all(sql, (err, rows) => {
-    if (err){
-      res.status(500).send(err);
-    } else {
-      res.send(rows);
-    }
-  });
-  db.close();
+	db.all(sql, (err, rows) => {
+		if (err) {
+			res.status(500).send(err);
+		} else {
+			res.send(rows);
+		}
+	});
+	db.close();
 });
