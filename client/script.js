@@ -19,7 +19,9 @@ fetch(url)
 			'decoration-4',
 			'uppercase',
 			'font-mono',
-			'pb-5'
+			'pb-5',
+			'animate',
+			'text-sky-500'
 		);
 
 		const body = document.getElementById('body');
@@ -35,7 +37,6 @@ fetch(url)
 			'md:grid-cols-2',
 			'lg:grid-cols-5',
 			'p-5',
-			'bg-sky-400',
 			'rounded-md'
 		);
 		display.insertAdjacentElement('beforeend', ul);
@@ -50,11 +51,24 @@ fetch(url)
 				'p-2',
 				'hover:font-bold',
 				'opacity-80',
-				'hover:opacity-100'
+				'hover:opacity-100',
+				'flex',
+				'bg-gradient-to-r',
+				'from-indigo-500',
+				'via-purple-500',
+				'to-pink-500',
+				'zoom',
+				'zoom:hover'
 			);
-			li.style.backgroundColor = user.color;
+			// li.style.backgroundColor = user.color;
 
 			ul.insertAdjacentElement('beforeend', li);
+
+			const star = document.createElement('p');
+			star.innerText = '*';
+			star.classList.add('text-3xl', 'font-bold', 'pr-4');
+			star.style.color = user.color;
+			li.insertAdjacentElement('beforeend', star);
 
 			const pElement = document.createElement('p');
 			pElement.innerText =

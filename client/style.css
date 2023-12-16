@@ -1,0 +1,34 @@
+.zoom {
+	transition: transform 0.4s;
+}
+.zoom:hover {
+	transform: scale(1.25);
+	z-index: 1;
+}
+
+@keyframes example {
+	0% {
+		color: rgb(99 102 241);
+	}
+  20% {
+		color: rgb(14 165 233);
+	}
+	40% {
+		color: rgb(16 185 129);
+	}
+	60% {
+		color: rgb(16 185 129);
+	}
+	80% {
+		color: rgb(14 165 233);
+	}
+	100% {
+		color: rgb(99 102 241);
+	}
+}
+.animate {
+	animation-name: example;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 2s;
+}
